@@ -1,0 +1,13 @@
+set title "reconstruction de l'attracteur de lorenz : dt=100"
+set xlabel "y(t)"
+set ylabel "y(t+dt)"
+set zlabel "y(t+2dt)"
+
+set term png
+set out "~/Desktop/X100.png"
+
+set view 53,68,1,1
+
+ splot [-30:30][-30:30][-30:30] 'lorenzX.out'  u 1:2:3 t '' w d
+ set term X11
+ set out

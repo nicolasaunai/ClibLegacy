@@ -1,0 +1,4 @@
+set title 'comparaison rk4 vs euler : systeme du projet NB'
+set xlabel 'x'
+set ylabel 'log(err abs.)'
+plot [0:3][] 'err.out' u 1:(log10($4)) t 'err(rk4)' w l 3, '' u 1:(log10($5)) t 'err(euler)' w l 10

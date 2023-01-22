@@ -1,0 +1,53 @@
+#chemins
+CLIB = ../clib/src
+CLIBINC = ../clib/inc
+DSRC = src
+DINC = inc
+OBJOUT = obj
+DEXE = bin
+
+DDATA = data
+
+EXEN = lagrange
+
+#flags
+FLAGS = -I$(DINC) -I$(CLIBINC) -Wall -ansi
+
+all: $(DEXE)/$(EXEN)
+
+#commandes
+CCL = gcc -lm -o
+CC = gcc $(FLAGS) -g -c
+
+#dependances
+OBJETS = $(OBJOUT)/main.o  $(OBJOUT)/lagrange.o $(OBJOUT)/dicho.o
+
+$(DEXE)/$(EXEN) : $(OBJETS)
+	$(CCL) $@ $(OBJETS)
+
+# Une 'meta-regle' permettant de compiler tout fichier source "C".
+$(OBJOUT)/%.o:$(DSRC)/%.c
+	$(CC) -o $@ $<
+
+
+$(OBJOUT)/%.o:$(CLIB)/%.c
+	$(CC) -o $@ $<
+
+
+#on vire tout
+clean:
+	rm $(OBJOUT)/*.o
+	rm $(DEXE)/$(EXEN)
+
+#lancement du programme
+run:
+	cd $(DEXE);\
+	./lagrange
+
+#vire les donnees de sortie
+cleandata:
+	rm $(DDATA)/*.out
+
+#deplace les fichiers sauvegarde
+cleansave:
+	rm */*~* 

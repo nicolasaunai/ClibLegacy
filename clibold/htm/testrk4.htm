@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Test RK4 a pas variable</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FF9900;
+	font-style: normal;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+<p>
+dx/dt = y <br>
+dy/dt = -a*t*x <br>
+param => a = 20
+</p>
+<br><br>
+<p>parametre : pas initial = 0.1</p>
+<p>variable : precision = 1e-11 à 1e-1</p>
+<table cellpadding="0" cellspacing="0" align="center">
+	<tr>
+		<td><img src="ref.jpg" border="0" alt=""></td>
+	</tr>
+	<tr>
+		<td align="center"><p>dt=0.001 / pf = 172ko</p></td>
+	</tr>
+	
+	<tr>
+    <td><img src="test1.jpg" border="0" alt=""></td>
+	</tr>
+	<tr>
+		<td align="center">pas init = 0.1 / prec = 1e-11 / pv = 9310ko</td>
+	</tr>
+	
+	
+	<tr>
+    <td><img src="test2.jpg" border="0" alt=""></td>
+	</tr>
+	<tr>
+		<td align="center">pas init = 0.1 / prec = 1e-9 / pv = 1953ko</td>
+	</tr>
+	
+	
+	<tr>
+    <td><img src="test3.jpg" border="0" alt=""></td>
+	</tr>
+	<tr>
+		<td align="center">pas init = 0.1 / prec = 1e-7 / pv = 408ko</td>
+	</tr>
+	
+	
+	
+	<tr>
+    <td><img src="test4.jpg" border="0" alt=""></td>
+	</tr>
+	<tr>
+		<td align="center">pas init = 0.1 / prec = 1e-5 / pv = 87ko</td>
+	</tr>	
+	
+	
+	<tr>
+    <td><img src="test5.jpg" border="0" alt=""></td>
+	</tr>
+	<tr>
+		<td align="center">pas init = 0.1 / prec = 1e-3 / pv = 18ko</td>
+	</tr>
+	
+	
+	<tr>
+    <td><img src="test6.jpg" border="0" alt=""></td>
+	</tr>
+	<tr>
+		<td align="center">pas init = 0.1 / prec = 1e-1 / pv = 4ko</td>
+	</tr>
+</table>
+<div align="center"><img src="poidprec.jpg" border="0" alt=""></div>
+<br><br><br>
+
+<p>precision = 1e-5</p>
+<p>pas initial = 2</p>
+<p>duree integ = 1</p>
+<div align="center"><img src="test7.jpg" border="0" alt=""></div>
+<p>precision = 1e-7</p>
+<div align="center"><img src="test8.jpg" border="0" alt=""></div>
+</body>
+</html>

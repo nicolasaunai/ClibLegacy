@@ -1,0 +1,35 @@
+# Project: test_gnuplot
+# Makefile created by Dev-C++ 4.9.9.0
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = gnuplottest.o ../../src/gnuplot.o ../../src/vect.o $(RES)
+LINKOBJ  = gnuplottest.o ../../src/gnuplot.o ../../src/vect.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  -g3 
+INCS =  -I"C:/Dev-Cpp/include"  -I"D:/Developpement/code C-C++/clib/inc" 
+CXXINCS =  -I"C:/Dev-Cpp/include/c++/3.3.1"  -I"C:/Dev-Cpp/include/c++/3.3.1/mingw32"  -I"C:/Dev-Cpp/include/c++/3.3.1/backward"  -I"C:/Dev-Cpp/lib/gcc-lib/mingw32/3.3.1/include"  -I"C:/Dev-Cpp/include"  -I"D:/Developpement/code C-C++/clib/inc" 
+BIN  = test_gnuplot.exe
+CXXFLAGS = $(CXXINCS)   -Wall -ansi -g3
+CFLAGS = $(INCS)   -Wall -ansi -g3
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before test_gnuplot.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "test_gnuplot.exe" $(LIBS)
+
+gnuplottest.o: gnuplottest.c
+	$(CC) -c gnuplottest.c -o gnuplottest.o $(CFLAGS)
+
+../../src/gnuplot.o: ../../src/gnuplot.c
+	$(CC) -c ../../src/gnuplot.c -o ../../src/gnuplot.o $(CFLAGS)
+
+../../src/vect.o: ../../src/vect.c
+	$(CC) -c ../../src/vect.c -o ../../src/vect.o $(CFLAGS)
